@@ -1,3 +1,17 @@
+## Front-End
+1. React
+2. Next.js
+3. Apollo Client
+4. Styled Components
+
+## Back-End
+1. Keystone.js
+2. node
+3. MongoDB
+
+## Starter File
+https://github.com/wesbos/Advanced-React/
+
 ![Advanced React & GraphQL](https://advancedreact.com/images/ARG/arg-facebook-share.png)
 
 # Advanced React & GraphQL
