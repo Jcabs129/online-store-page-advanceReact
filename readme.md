@@ -1,3 +1,9 @@
+## How to get started
+1. /Advanced-React/sick-fits/frontend
+2. `npm run dev`
+3. open browser `http://localhost:7777`
+
+
 ## Front-End
 1. React
 2. Next.js
