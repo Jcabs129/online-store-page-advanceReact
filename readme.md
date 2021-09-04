@@ -3,20 +3,29 @@
 2. `npm run dev`
 3. open browser `http://localhost:7777`
 
-
-## Front-End
-1. React
-2. Next.js
-3. Apollo Client
-4. Styled Components
-
-## Back-End
-1. Keystone.js
-2. node
-3. MongoDB
-
 ## Starter File
 https://github.com/wesbos/Advanced-React/
+
+## Stack
+1. React, 
+2. Next.js, 
+3. GraphQL, 
+4. Node.js
+
+## Chrome Extension
+1. react dev tools
+2. apollo client dev tool
+
+## How to get started
+- npm run dev (/frontend)
+
+## Short cuts
+1.triggerSuggest - ctrl + space bar on an error
+
+
+## Usefull Material
+https://ricostacruz.com/nprogress/
+
 
 ![Advanced React & GraphQL](https://advancedreact.com/images/ARG/arg-facebook-share.png)
 

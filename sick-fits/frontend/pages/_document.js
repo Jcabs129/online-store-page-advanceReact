@@ -4,7 +4,7 @@ export default class MyDocumnet extends Document {
   render() {
     return (
       <Html lang="en-gb">
-        {/* <head> </head> */}
+        <Head />
         <body>
           <Main />
           <NextScript />
