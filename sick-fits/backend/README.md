@@ -4,6 +4,12 @@
 
 1. Signed up to cloudinary
 
+## How to run seed-data
+This will create additional data within your DB so that you dont have to add each item/product manually.
+located under sick-fits/products 
+
+- `npm run seed-data`
+
 ## Route created
 http://localhost:3000/init
 http://localhost:3000/users

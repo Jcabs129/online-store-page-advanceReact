@@ -8,6 +8,7 @@ import { User } from './schemas/User';
 import { Product } from './schemas/Product';
 import { ProductImage } from './schemas/ProductImage';
 import 'dotenv/config';
+import { insertSeedData } from './seed-data';
 
 const databaseURL =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-sick-fits-tutorial';
@@ -37,19 +38,26 @@ export default withAuth(
         credentials: true,
       },
     },
+
     db: {
       adapter: 'mongoose',
       url: databaseURL,
-      //  TODO: Add data seeding here
+      async onConnect(keystone) {
+        console.log('connected to the DB!!!');
+        if (process.argv.includes('---seed-data')) {
+          await insertSeedData(keystone);
+        }
+      },
     },
+
     lists: createSchema({
       // schema items go in here
       User,
       Product,
       ProductImage,
     }),
+
     ui: {
-      // TODO change this for roles
       // isAccessAllowed: () => true, // Allowing it true for anyone
 
       // show the UI only for people who pass this test
@@ -59,7 +67,6 @@ export default withAuth(
         return !!session?.data;
       },
     },
-    // TODO add session values here
     session: withItemData(statelessSessions(sessionConfig), {
       // GraphQL Query
       User: 'id name email',
