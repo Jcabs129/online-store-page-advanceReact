@@ -9,8 +9,8 @@ http://localhost:3000/init
 http://localhost:3000/users
 
 ## Cloudinary
-1. created an account
-2. Created a schema file called `ProductImage.ts`
+1. created an account ✅
+2. Created a schema file called `ProductImage.ts` ✅
 
 1. http://localhost:3000/product-images/
 2. create a new productImage 
