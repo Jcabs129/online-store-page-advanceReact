@@ -50,12 +50,14 @@ export default withAuth(
     }),
     ui: {
       // TODO change this for roles
-      // isAccessAllowed: () => true, allowing it true for anyone
+      // isAccessAllowed: () => true, // Allowing it true for anyone
 
       // show the UI only for people who pass this test
-      isAccessAllowed: ({ session }) =>
-        // console.log(session);
-        !!session?.data,
+      isAccessAllowed: ({ session }) => {
+        console.log(session);
+        // return session?.data;
+        return !!session?.data;
+      },
     },
     // TODO add session values here
     session: withItemData(statelessSessions(sessionConfig), {
