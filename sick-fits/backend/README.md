@@ -14,6 +14,9 @@ located under sick-fits/products
 http://localhost:3000/init
 http://localhost:3000/users
 
+## graphQL Route
+http://localhost:3000/api/graphql
+
 ## Cloudinary
 1. created an account ✅
 2. Created a schema file called `ProductImage.ts` ✅

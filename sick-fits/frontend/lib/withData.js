@@ -8,6 +8,7 @@ import { endpoint, prodEndpoint } from '../config';
 function createClient({ headers, initialState }) {
   return new ApolloClient({
     link: ApolloLink.from([
+      // Error handling link
       onError(({ graphQLErrors, networkError }) => {
         if (graphQLErrors)
           graphQLErrors.forEach(({ message, locations, path }) =>
