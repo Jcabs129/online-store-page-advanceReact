@@ -1,8 +1,8 @@
+import { ApolloProvider } from '@apollo/client';
 import NProgress from 'nprogress';
 import Router from 'next/router';
 import Page from '../components/Page';
 import '../components/styles/nprogress.css';
-import { ApolloProvider } from '@apollo/client';
 import withData from '../lib/withData';
 
 // https://ricostacruz.com/nprogress/ - Loading bar option
@@ -11,7 +11,7 @@ Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
 function MyApp({ Component, pageProps, apollo }) {
-  console.log(apollo);
+  // console.log(apollo);
   return (
     <ApolloProvider client={apollo}>
       <Page>
