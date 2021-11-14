@@ -7,7 +7,7 @@
 ## How to run seed-data
 This will create additional data within your DB so that you dont have to add each item/product manually.
 located under sick-fits/products 
-
+- Navigate to to directory `/Advanced-React/sick-fits/backend
 - `npm run seed-data`
 
 ## Route created

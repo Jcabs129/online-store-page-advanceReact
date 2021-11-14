@@ -44,7 +44,7 @@ export default withAuth(
       url: databaseURL,
       async onConnect(keystone) {
         console.log('connected to the DB!!!');
-        if (process.argv.includes('---seed-data')) {
+        if (process.argv.includes('--seed-data')) {
           await insertSeedData(keystone);
         }
       },
