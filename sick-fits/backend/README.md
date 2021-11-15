@@ -7,12 +7,15 @@
 ## How to run seed-data
 This will create additional data within your DB so that you dont have to add each item/product manually.
 located under sick-fits/products 
-
+- Navigate to to directory `/Advanced-React/sick-fits/backend
 - `npm run seed-data`
 
 ## Route created
 http://localhost:3000/init
 http://localhost:3000/users
+
+## graphQL Route
+http://localhost:3000/api/graphql
 
 ## Cloudinary
 1. created an account ✅
