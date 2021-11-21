@@ -61,7 +61,7 @@ export default function CreateProduct() {
       <DisplayError error={error} />
       <fieldset disabled={loading} aria-busy={loading}>
         <label htmlFor="image">
-          image
+          Image
           <input
             required
             type="file"
@@ -72,7 +72,7 @@ export default function CreateProduct() {
         </label>
 
         <label htmlFor="name">
-          name
+          Name
           <input
             type="text"
             id="name"
@@ -84,7 +84,7 @@ export default function CreateProduct() {
         </label>
 
         <label htmlFor="price">
-          price
+          Price
           <input
             type="number"
             id="price"
