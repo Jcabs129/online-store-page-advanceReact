@@ -38,7 +38,7 @@ export default function RequestReset() {
   return (
     <Form method="POST" onSubmit={handleSubmit}>
       <h2>Request a Password Reset</h2>
-      <Error error={data?.authenticateUserWithPassword} />
+      <Error error={error} />
       <fieldset>
         {data?.sendUserPasswordResetLink === null && (
           <p>Success! check your email for a link!</p>
