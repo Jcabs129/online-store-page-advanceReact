@@ -52,7 +52,7 @@ export default function Reset({ token }) {
       <Error error={error || successfulError} />
       <fieldset>
         {data?.redeemUserPasswordResetToken === null && (
-          <p>You can now sign in!</p>
+          <p>Success! You can now sign in!</p>
         )}
 
         <label htmlFor="email">
