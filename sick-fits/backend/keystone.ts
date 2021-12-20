@@ -4,6 +4,7 @@ import {
   withItemData,
   statelessSessions,
 } from '@keystone-next/keystone/session';
+import { CartItem } from './schemas/CartItem';
 import { User } from './schemas/User';
 import { Product } from './schemas/Product';
 import { ProductImage } from './schemas/ProductImage';
@@ -62,17 +63,14 @@ export default withAuth(
       User,
       Product,
       ProductImage,
+      CartItem,
     }),
 
     ui: {
-      // isAccessAllowed: () => true, // Allowing it true for anyone
-
       // show the UI only for people who pass this test
-      isAccessAllowed: ({ session }) => {
-        console.log(session);
-        // return session?.data;
-        return !!session?.data;
-      },
+      isAccessAllowed: ({ session }) =>
+        // console.log(session);
+        !!session?.data,
     },
     session: withItemData(statelessSessions(sessionConfig), {
       // GraphQL Query
