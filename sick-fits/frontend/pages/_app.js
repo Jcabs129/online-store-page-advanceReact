@@ -4,6 +4,7 @@ import Router from 'next/router';
 import Page from '../components/Page';
 import '../components/styles/nprogress.css';
 import withData from '../lib/withData';
+import { CartStateProvider } from '../lib/cartState';
 
 // https://ricostacruz.com/nprogress/ - Loading bar option
 Router.events.on('routeChangeStart', () => NProgress.start());
@@ -14,9 +15,11 @@ function MyApp({ Component, pageProps, apollo }) {
   // console.log(apollo);
   return (
     <ApolloProvider client={apollo}>
-      <Page>
-        <Component {...pageProps} />
-      </Page>
+      <CartStateProvider>
+        <Page>
+          <Component {...pageProps} />
+        </Page>
+      </CartStateProvider>
     </ApolloProvider>
   );
 }
