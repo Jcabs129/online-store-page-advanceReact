@@ -30,7 +30,6 @@ export default function Product({ product }) {
           Edit ✏️
         </Link>
         <AddToCart id={product.id} />
-
         <DeleteProduct id={product.id}>Delete</DeleteProduct>
       </div>
     </ItemStyles>
