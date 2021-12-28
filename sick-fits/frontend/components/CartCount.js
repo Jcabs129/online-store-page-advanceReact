@@ -15,20 +15,25 @@ const Dot = styled.div`
 
 const AnimationStyles = styled.span`
   position: relative;
+  .count {
+    display: block;
+    position: relative;
+    transition: transform 0.4s;
+    backface-visibility: hidden;
+  }
   .count-enter {
-    background: green;
+    transform: scale(4) rotateX(0.5turn);
   }
-
   .count-enter-active {
-    background: yellow;
+    transform: rotateX(0);
   }
-
   .count-exit {
-    background: blue;
+    top: 0;
+    position: absolute;
+    transform: rotateX(0);
   }
-
-  count-exit-active {
-    background: pink;
+  .count-exit-active {
+    transform: scale(4) rotateX(0.5turn);
   }
 `;
 
@@ -41,7 +46,7 @@ export default function CartCount({ count }) {
           className="count"
           classNames="count"
           key={count}
-          timeout={{ enter: 5000, exit: 5000 }}
+          timeout={{ enter: 400, exit: 400 }}
         >
           <Dot>{count}</Dot>
         </CSSTransition>
