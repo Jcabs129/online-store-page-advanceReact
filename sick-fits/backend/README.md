@@ -1,6 +1,7 @@
 ## How to get started on BE
 1. Navigate to to directory `/Advanced-React/sick-fits/backend`
-2. run `npm run dev`
+2. `npm install`
+3. run `npm run dev`
 
 1. Signed up to cloudinary
 
