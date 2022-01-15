@@ -60,4 +60,19 @@ mutation {
   }
 }
 `
+## Vid-57 Creating our order and Order Items
+/mutations/checkout.ts
 
+5. Convert the cart items to the OrderItem
+6. Create the order and return it
+7. Clean up any old cart
+
+what was changed?
+1. kill BE terminal
+2. Restart `npm run dev`
+3. Nvigate to http://localhost:7777/
+4. go to cart -> and fill out payment Method and pay
+5. Check console -> new object called `checkout`
+6. Also Check BE terminal call there should also be ID - exampls `pi_3KIE8wIzRLwndXL92Tf5cuBn`
+7. Payment ID can be matched within the stripe account `https://dashboard.stripe.com/test/payments/`
+8. Also the charge item should also be shown in your BE keystone `http://localhost:3000/orders`
