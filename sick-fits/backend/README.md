@@ -53,9 +53,11 @@ Frontend - Checkout Cart (token ID)
 
 
 api Explorer
-`mutation {
+`
+mutation {
   checkout(token: "pm_1KGAYFIzRLwndXL9dd3KmKaT") {
     id
   }
-}`
+}
+`
 
