@@ -4,11 +4,16 @@ import {
   withItemData,
   statelessSessions,
 } from '@keystone-next/keystone/session';
+import { OrderItem } from './schemas/OrderItem';
+import { Order } from './schemas/Order';
+import { CartItem } from './schemas/CartItem';
 import { User } from './schemas/User';
 import { Product } from './schemas/Product';
 import { ProductImage } from './schemas/ProductImage';
 import 'dotenv/config';
 import { insertSeedData } from './seed-data';
+import { sendPasswordResetEmail } from './lib/mail';
+import { extendGraphqlSchema } from './mutations';
 
 const databaseURL =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-sick-fits-tutorial';
@@ -26,6 +31,12 @@ const { withAuth } = createAuth({
   initFirstItem: {
     fields: ['name', 'email', 'password'],
     // TODO: add in initials roles here
+  },
+  passwordResetLink: {
+    async sendToken(args) {
+      // Send the Email
+      await sendPasswordResetEmail(args.token, args.identity);
+    },
   },
 });
 
@@ -55,17 +66,17 @@ export default withAuth(
       User,
       Product,
       ProductImage,
+      CartItem,
+      OrderItem,
+      Order,
     }),
 
+    extendGraphqlSchema,
     ui: {
-      // isAccessAllowed: () => true, // Allowing it true for anyone
-
       // show the UI only for people who pass this test
-      isAccessAllowed: ({ session }) => {
-        console.log(session);
-        // return session?.data;
-        return !!session?.data;
-      },
+      isAccessAllowed: ({ session }) =>
+        // console.log(session);
+        !!session?.data,
     },
     session: withItemData(statelessSessions(sessionConfig), {
       // GraphQL Query

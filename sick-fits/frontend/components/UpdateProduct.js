@@ -39,7 +39,6 @@ export default function UpdateProduct({ id }) {
   const { data, error, loading } = useQuery(SINGLE_PRODUCT_QUERY, {
     variables: { id },
   });
-  console.log(data);
 
   // 2. We need to get the mutation to update the product
   const [
