@@ -47,7 +47,7 @@ function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
   const router = useRouter();
-  const closeCart = useCart();
+  const { closeCart } = useCart();
   const [checkout, { error: graphQlError }] = useMutation(
     CREATE_ORDER_MUTATION,
     {
