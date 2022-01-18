@@ -6,14 +6,19 @@ export function isSignedIn({ session }: ListAccessArgs) {
   return !!session;
 }
 
+const generatedPermissions = object.fromEntries(
+  permissionsList.map((permissioms) => [
+    permission,
+    function ({ session }: ListAccessArgs) {
+      return !!session?.data.role?.[permission];
+    },
+  ])
+);
+
+// Permissions check if someone meets a criteria yes or no
 export const permissions = {
-  canManageProducts({ session }) {
-    return session?.data.role?.canManageProducts;
-  },
-  canSeeOtherUsers({ session }) {
-    return session?.data.role?.canSeeOtherUsers;
-  },
-  canManageUsers({ session }) {
-    return session?.data.role?.canManageUsers;
+  ...generatedPermissions,
+  isAwesome({ session }: listAccessArgs) {
+    return session?.data.name.includes('wes');
   },
 };
