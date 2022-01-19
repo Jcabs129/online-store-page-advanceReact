@@ -1,6 +1,5 @@
-// At its simplest, the access controls returns a yes or no value depending on the users session
-
 import { ListAccessArgs } from './types';
+// At its simplest, the access controls returns a yes or no value depending on the users session
 
 export function isSignedIn({ session }: ListAccessArgs) {
   return !!session;
@@ -22,3 +21,5 @@ export const permissions = {
     return session?.data.name.includes('wes');
   },
 };
+
+// Rule based function
