@@ -25,7 +25,6 @@ export const permissions = {
 
 // Rule based function
 // Rules can return a boolean - yes or no - or a filter which limitis which products they CRUD.
-
 export const rules = {
   canManageProducts({ session }): ListAccessArgs {
     // 1. Do they have the permission of canManageProducts
@@ -34,5 +33,12 @@ export const rules = {
     }
     // 2. If not, do they own this item?
     return { user: { id: session.itemId } };
+  },
+  canReadProducts({ session }: ListAccessArgs) {
+    if (permissions.canManageProducts({ session })) {
+      return true; // They can Read everything!!
+    }
+    // They should only see available products (bases on the status field)
+    return { status: 'AVAILABLE' };
   },
 };
