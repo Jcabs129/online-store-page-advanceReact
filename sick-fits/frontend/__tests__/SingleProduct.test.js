@@ -36,6 +36,7 @@ describe('<SingleProduct />', () => {
     // debug();
     expect(container).toMatchSnapshot();
   });
+
   it('Errors out when an item is found', async () => {
     const errorMock = [
       {
