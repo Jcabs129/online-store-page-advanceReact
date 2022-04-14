@@ -3,7 +3,7 @@
 exports[`<Pagination /> renders pagination for 18 times 1`] = `
 <div>
   <div
-    class="PaginationStyles-sc-aduuar-0 iGVofk"
+    class="PaginationStyles-sc-aduuar-0 cFkcwq"
     data-testid="pagination"
   >
     <a
