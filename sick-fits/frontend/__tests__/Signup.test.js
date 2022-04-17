@@ -59,7 +59,7 @@ describe('<Signup/>', () => {
     await userEvent.type(screen.getByPlaceholderText(/Address/i), me.email);
     await userEvent.type(screen.getByPlaceholderText(/Password/i), password);
 
-    // click the submit button
+    // Click the submit button
     await userEvent.click(screen.getByText(/Sign Up/i));
     await screen.findByText(
       `signed up with ${me.email} - please Go ahead and sign in!`
